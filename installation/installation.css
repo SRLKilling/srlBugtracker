@@ -1,0 +1,133 @@
+body section#mainContent {
+	width:70%;
+	margin: 40px auto;
+	box-shadow: 0 1px 5px #555555;
+	padding: 1px 10px;
+}
+
+body section#mainContent header h1 {
+	text-align:center;
+	font-size: 60px;
+	font-weight: normal;
+	text-shadow: 1px;
+}
+
+body section#mainContent fieldset {
+	padding: 7px;
+	margin-bottom: 15px;
+}
+
+
+body section#mainContent fieldset header {
+	margin-bottom: 15px;
+}
+body section#mainContent fieldset header h2{
+	margin: 5px 10px;
+}
+body section#mainContent fieldset header p{
+	margin: 0px 0px 10px 35px;
+}
+
+
+body section#mainContent fieldset {
+	border:none;
+	box-shadow: 0 1px 2px #555555;
+	margin:10px;
+}
+
+body section#mainContent fieldset div {
+	padding:7px;
+	margin: 2px 0px;
+}
+
+body section#mainContent fieldset legend {
+	font-style:italic;
+}
+body section#mainContent fieldset input {
+	margin:1px 2px;
+}
+body section#mainContent fieldset .error {
+	color: red;
+}
+
+body section#mainContent fieldset label {
+	display:inline-block;
+	margin: 0px 0.5%;
+	width: 45%;
+	min-height:18px;
+	text-align:right;
+	color: #2F2F2F;
+	font-size: inherit;
+}
+
+body section#mainContent fieldset input[type=text], body section#mainContent fieldset input[type=password], body section#mainContent fieldset input[type=email]{
+	padding: 4px;
+	margin: 0px 0.5%;
+    border: solid 1px #E5E5E5;  
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;  
+    width: 50%;   
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;  
+}
+
+body section#mainContent fieldset input[required]{
+    box-shadow: orange 0px 0px 5px;
+    -moz-box-shadow: orange 0px 0px 5px;
+    -webkit-box-shadow: orange 0px 0px 5px;
+}
+body section#mainContent fieldset input[required]:valid{
+    box-shadow: green 0px 0px 5px;  
+    -moz-box-shadow: green 0px 0px 5px;  
+    -webkit-box-shadow: green 0px 0px 5px;  
+}
+
+body section#mainContent fieldset input[type=email]:invalid, body section#mainContent fieldset input.empty{
+    box-shadow: red 0px 0px 5px;  
+    -moz-box-shadow: red 0px 0px 5px;  
+    -webkit-box-shadow: red 0px 0px 5px;  
+}
+
+body section#mainContent fieldset input.empty:-moz-placeholder,  body section#mainContent fieldset input.empty::-webkit-input-placeholder {
+	color: red;
+}
+
+body section#mainContent fieldset input[disabled]{
+    background: #EFEFEF;
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 5px;
+}
+
+
+
+				
+body section#mainContent footer {
+	text-align:center;
+}
+body section#mainContent footer input {
+	padding:10px;
+	border: 1px solid #AAAAAA;
+	font-size: 22px;
+	border-radius: 4px;
+	background-color: #EFEFEF;
+}
+body section#mainContent footer input:hover {
+	background-color: #5F5F5F;
+	color: white;
+}
+
+body section#mainContent fieldset footer a {
+	padding:10px;
+	border: 1px solid #AAAAAA;
+	font-size: 22px;
+	border-radius: 4px;
+	background-color: #EFEFEF;
+	
+}
+body section#mainContent fieldset footer a:hover {
+	background-color: #5F5F5F;
+	color: white;
+}
