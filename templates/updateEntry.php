@@ -3,17 +3,21 @@
 	<form action="" method="post">
 
 		<h4>"<?php echo $entry->name;?>"</h4>
-		
-			<label for="updatedPercentage">Désormais réalisé(e) à</label>
-			<input type="number" name="updatedPercentage" id="updatedPercentage" value="<?php echo $entry->realisedPercentage; ?>" min="0" max="100" step="1" required/>
+			
+			<div>
+				<label for="updatedPercentage">Désormais réalisé(e) à</label>
+				<input type="number" name="updatedPercentage" id="updatedPercentage" value="<?php echo $entry->realisedPercentage; ?>" min="0" max="100" step="1" required/>
+			</div>
 			
 			<div id="realised-bar">
 				<div style="width:<?php echo $entry->realisedPercentage;?>%;" id="already-realised"></div>
 				<div style="width:<?php echo $entry->realisedPercentage;?>%;" id="realised"></div>
 			</div>
 			
-			<label for="updateDescription">Courte description de la mise à jour :</label>
-			<textarea name="updateDescription" id="updateDescription" rows="15" required></textarea><br />
+			<div>
+				<label for="updateDescription">Courte description de la mise à jour&nbsp;:</label>
+				<textarea name="updateDescription" id="updateDescription" rows="15" required></textarea>
+			</div>
 			
 		<input type="submit" value="Mettre à jour" name="updateSubmited"/>
 	</form>

@@ -40,6 +40,10 @@ class srlBtUser {
 		mysql_query('UPDATE '.$this->conf->dbPrefix.'Users SET last_seen='.time().' WHERE id='.$this->id);
 	}
 	
+	function can($right) {
+		return $this->hasRight($this->bt->rigthsArray[$right]);
+	}
+	
 	static function getPseudo($bt, $id) {
 		$pseudoRes = mysql_fetch_row(mysql_query("SELECT ".$bt->conf->dbUserPseudo." FROM ".$bt->conf->dbUserDb.".".$bt->conf->dbUserTable." WHERE ".$bt->conf->dbUserId."=".$id));
 		return  $pseudoRes[0];

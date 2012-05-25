@@ -216,35 +216,6 @@ body section section#MainContent h4 {
 
 /******** Formulaire et affichage d'une entrée *****************************************/
 
-body section section#MainContent form label{
-	width: 12%;
-	text-align:right;
-	margin: 5px;
-	float:left;
-	clear:left;
-	color: #2F2F2F;
-	padding: 2px 5px 2px 5px;
-}
-
-body section section#MainContent form input, body section section#MainContent form select, body section section#MainContent form textarea{
-	box-shadow: 0px 0px 2px #888888;
-	border: 1px solid #E5E5E5;
-	border-radius: 3px;
-	margin: 5px;
-	width:83%;
-	max-width:83%;
-	background: -webkit-gradient(linear, left top, left 25, from(#FAFAFA), color-stop(4%, #EEEEEE), to(#FAFAFA));  
-    background: -moz-linear-gradient(top, #FAFAFA, #EEEEEE 1px, #FAFAFA 25px);  
-	padding: 2px 5px 2px 5px;
-}
-
-body section section#MainContent form input:hover, body section section#MainContent form input:focus,
-body section section#MainContent form select:hover, body section section#MainContent form select:focus,
-body section section#MainContent form textarea:hover, body section section#MainContent form textarea:focus {
-	box-shadow: 0px 0px 2px #555555;
-	border: 1px solid #D5D5D5;
-}
-
 body section section#MainContent form input[type=submit] {
 	width:auto;
 	margin:15px auto;
@@ -253,31 +224,91 @@ body section section#MainContent form input[type=submit] {
 	font-size: 16px;
 }
 
-body section section#MainContent h6 {
-	width: 12%;
+body section section#mainContent div {
+	padding:7px;
+	margin: 2px 0px;
+}
+
+body section section#MainContent div label, body section section#MainContent div h6{
+	display:inline-block;
+	width: 15%;
 	min-height:18px;
 	text-align:right;
-	margin: 5px;
-	float:left;
-	clear:left;
 	color: #2F2F2F;
-	padding: 2px 5px 2px 5px;
 	font-size: inherit;
+	vertical-align:top;
+	padding-top:4px;
+	margin: 0px;
 }
-body section section#MainContent p {
-	width:83%;
+body section section#MainContent div p,
+body section section#MainContent div input[type=text],
+body section section#MainContent div input[type=email],
+body section section#MainContent div input[type=number],
+body section section#MainContent div select,
+body section section#MainContent div textarea {
 	min-height:18px;
-	margin: 5px;
-	padding: 2px 5px 2px 5px;
-	color: #2F2F2F;
+	padding: 4px;
+	margin: 0px 0.5%;
+    width: 80%;
 	display:inline-block;
+	color: #2F2F2F;
+
 }
+body section section#MainContent input, body section section#MainContent select, body section section#MainContent textarea{
+    border: solid 1px #E5E5E5;
+	border-radius: 3px;
+	background: -webkit-gradient(linear, left top, left 25, from(#FAFAFA), color-stop(4%, #EEEEEE), to(#FAFAFA));  
+    background: -moz-linear-gradient(top, #FAFAFA, #EEEEEE 1px, #FAFAFA 25px);
+	box-shadow: 0px 0px 2px #888888;
+}
+
+body section section#MainContent input:hover, body section section#MainContent input:focus,
+body section section#MainContent select:hover, body section section#MainContent select:focus,
+body section section#MainContent textarea:hover, body section section#MainContent textarea:focus {
+	box-shadow: 0px 0px 2px #555555;
+	border: 1px solid #D5D5D5;
+}
+
+body section#mainContent input[required],
+body section#mainContent textarea[required]{
+    box-shadow: #FF9900 0px 0px 5px;
+    -moz-box-shadow: #FF9900 0px 0px 5px;
+    -webkit-box-shadow: #FF9900 0px 0px 5px;
+}
+body section#mainContent input[required]:hover, body section#mainContent input[required]:focus,
+body section#mainContent textarea[required]:hover, body section#mainContent textarea[required]:focus {
+    box-shadow: #FF6600 0px 0px 5px;  
+    -moz-box-shadow: #FF6600 0px 0px 5px;  
+    -webkit-box-shadow: #FF6600 0px 0px 5px;
+}
+
+body section#mainContent input[required]:valid,
+body section#mainContent textarea[required]:valid {
+    box-shadow: #009900 0px 0px 5px;  
+    -moz-box-shadow: #009900 0px 0px 5px;  
+    -webkit-box-shadow: #009900 0px 0px 5px;  
+}
+
+body section#mainContent input[type=email]:invalid, body section#mainContent input.empty, body section#mainContent textarea.empty{
+    box-shadow: #FF0000 0px 0px 5px;  
+    -moz-box-shadow: #FF0000 0px 0px 5px;  
+    -webkit-box-shadow: #FF0000 0px 0px 5px;  
+}
+
+body section#mainContent input.empty:-moz-placeholder,  body section#mainContent input.empty::-webkit-input-placeholder {
+	color: red;
+}
+
+
+
+
 
 body section section#MainContent div#realised-bar {
 	width:80%;
 	height:15px;
 	border:1px solid rgb(192,192,192);
 	margin:10px auto;
+	padding:0px;
 	position:relative;
 	top:0px;
 	left:0px;
@@ -288,6 +319,7 @@ body section section#MainContent div#realised-bar div {
 	top:0px;
 	left:0px;
 	padding:0px;
+	margin:0px;
 	height:15px;
 }
 
