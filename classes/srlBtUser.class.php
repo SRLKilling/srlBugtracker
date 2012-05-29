@@ -15,7 +15,7 @@ class srlBtUser {
 	}
 	
 	function hasRight($bit) {
-		return ($this->rights & $bit) == $bit;
+		return ($this->isAdmin() || (($this->rights & $bit) == $bit));
 	}
 	
 	function updateUserData($id) {
