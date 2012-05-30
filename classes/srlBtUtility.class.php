@@ -26,9 +26,26 @@ class srlBtUtility {
 		return ($uppercase) ? ucfirst($newdate) : $newdate;
 	}
 	
+	function setBit($bnum, $bit, $state) {
+		return ($state) ? ($bnum | $bit) : ($bnum & ~$bit);
+	}
+	
 	function getLocation($page, $id=0) {
-		return "index.php?p=".$page. ($id!=0 ? "&id=".$id : "");
-		// return ($id!=0 ? $id."/" : "").$page.".html";
+	
+		switch($this->bt->conf->urlRewriting) {
+			case 2:
+				return preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).'-'.($id!=0 ? $id : "").".html";
+			break;
+		
+			case 1:
+				return ($id!=0 ? $id."/" : "").preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).".html";
+			break;
+			
+			case 0:
+			default:
+				return "index.php?p=".$page. ($id!=0 ? "&id=".$id : "");
+			break;
+		}
 	}
 	
 	function templateLocation() {
