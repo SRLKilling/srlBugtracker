@@ -1,10 +1,39 @@
 <?php
+
+class srlBtUserToUpdate {
+	function __construct($baseUser) {
+		$this->baseUser = $baseUser;
+	}
+	function setRight($right, $state) {
+		if(!isset($this->rights)) { $this->rights = $this->baseUser->rights; }
+		$this->rights = $this->baseUser->bt->utility->setBit($this->rights, $this->baseUser->bt->rightsArray[$right], $state);
+	}
+	
+	function setRightByBit($bit, $state) {
+		if(!isset($this->rights)) { $this->rights = $this->baseUser->rights; }
+		$this->rights = $this->baseUser->bt->utility->setBit($this->rights, $bit, $state);
+	}
+	
+	function update() {
+		$query = 'UPDATE '.$this->baseUser->bt->conf->dbPrefix.'Users SET ';
+		
+		if(isset($this->rights)) {
+			$query .= 'rights='.$this->rights;
+			$this->baseUser->rights = $this->rights;
+		}
+		
+		$query .= ' WHERE id='.$this->baseUser->id;
+		mysql_query($query);
+	}
+}
+
 class srlBtUser {
 
 	function __construct($bt, $id=0) {
 		$this->bt = $bt;
 		$this->conf = $bt->conf;
 		$this->updateUserData($id);
+		$this->toUpdate = new srlBtUserToUpdate($this);
 	}
 	
 	function isGuest() {
@@ -36,12 +65,16 @@ class srlBtUser {
 		}
 	}
 	
-	function updateLastAction() {
+	function updateLastSeen() {
 		mysql_query('UPDATE '.$this->conf->dbPrefix.'Users SET last_seen='.time().' WHERE id='.$this->id);
 	}
 	
+	function update() {
+		$this->toUpdate->update();
+	}
+	
 	function can($right) {
-		return $this->hasRight($this->bt->rigthsArray[$right]);
+		return $this->hasRight($this->bt->rightsArray[$right]);
 	}
 	
 	static function getPseudo($bt, $id) {

@@ -12,7 +12,7 @@ class srlBugtracker {
 		$this->conf = $srlConfig;
 		$this->utility = new srlBtUtility($this);
 		$this->user = new srlBtUser($this, isset($_SESSION[$this->conf->sessId]) ? $_SESSION[$this->conf->sessId] : 0);
-		$this->user->updateLastAction();
+		$this->user->updateLastSeen();
 		
 		$this->rigthsArray = array(
 			"showEntryList" 		=> 0b000000001,
