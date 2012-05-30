@@ -1,10 +1,27 @@
 <?php
+class srlBtUserToUpdate {
+	function __construct($baseUser) {
+		$this->baseUser = $baseUser;
+	}
+	function setRight($right, $state) {
+		if(!isset($this->rights)) $this->rights = $this-baseUser->rigths;
+		if($state) {
+			$this->right = $this->right | $right;
+		} else if(($this->right & $right) == $right) {
+			$this->right = $this->right ^ $right
+		} else {
+			$this->right = ~($this->right ^ ~$right);
+		}
+	}
+}
+
 class srlBtUser {
 
 	function __construct($bt, $id=0) {
 		$this->bt = $bt;
 		$this->conf = $bt->conf;
 		$this->updateUserData($id);
+		$this->update = new srlBtUserToUpdate($this);
 	}
 	
 	function isGuest() {
