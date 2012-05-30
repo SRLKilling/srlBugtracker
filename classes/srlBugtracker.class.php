@@ -15,15 +15,14 @@ class srlBugtracker {
 		$this->user->updateLastAction();
 		
 		$this->rigthsArray = array(
-			"showEntryList" 		=> 0b000000001,
-			"addEntry"				=> 0b000000010,
-			"showEntry" 			=> 0b000000100,
-			"assignEntry" 			=> 0b000001000,
-			"updateEntry" 			=> 0b000010000,
-			"editEntry"				=> 0b000100000,
-			"showUser"				=> 0b001000000,
-			"addComment"			=> 0b010000000,
-			"editUserRights"		=> 0b10000000
+			"showEntryList" 		=> 0b00000001,
+			"addEntry"				=> 0b00000010,
+			"showEntry" 			=> 0b00000100,
+			"assignEntry" 			=> 0b00001000,
+			"updateEntry" 			=> 0b00010000,
+			"editEntry"				=> 0b00100000,
+			"showUser"				=> 0b01000000,
+			"addComment"			=> 0b10000000
 		);
 		
 		$this->pages = array(
