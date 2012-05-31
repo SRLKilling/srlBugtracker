@@ -14,6 +14,7 @@ else if(isset($_POST["userDeconnectionSubmited"])) {
 }
 if(isset($_SESSION["message"])) {
 	echo $_SESSION["message"] == 0 ? "lol" : "0";
+	unset($_SESSION["message"]);
 }
 
 ?>
@@ -23,15 +24,15 @@ if(isset($_SESSION["message"])) {
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>srlBugtracker</title>
-		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="Themes/designGris.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="<?php echo $srlBugtracker->utility->getThemeLocation();?>" />
 		<script src="bugtracker.js"></script>
 	</head>
 	<body>
 		<nav id="MainNaviguationBar">
 			<ul>
-				<li><a href="index.php">Accueil</a></li>
+				<li><a href="<?php echo $srlBugtracker->utility->getLocation("showEntryList");?>">Accueil</a></li>
 				
-				<li><a href="index.php?p=addEntry">Ajouter une entrée</a></li>
+				<li><a href="<?php echo $srlBugtracker->utility->getLocation("addEntry");?>">Ajouter une entrée</a></li>
 				
 			<?php if($srlBugtracker->user->isGuest()) { ?>
 				<li><a href="index.php?p=inscription">S'inscrire</a></li>
@@ -71,7 +72,6 @@ if(isset($_SESSION["message"])) {
 					Vous n'avez pas les droits requis.
 				
 				<?php } else { include("controllers/".$srlBugtracker->page.".php"); } ?>
-				
 			</section>
 
 			

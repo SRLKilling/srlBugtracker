@@ -31,14 +31,13 @@ class srlBtUtility {
 	}
 	
 	function getLocation($page, $id=0) {
-	
 		switch($this->bt->conf->urlRewriting) {
 			case 2:
-				return preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).'-'.($id!=0 ? $id : "").".html";
+				return preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).($id!=0 ? '-'.$id : "").".html";
 			break;
 		
 			case 1:
-				return ($id!=0 ? $id."/" : "").preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).".html";
+				return (isset($_GET['id']) ? '../' : '').($id!=0 ? $id.'/' : '').preg_replace_callback("/([A-Z])/", function($m) { return '-'.strtolower($m[1]);}, $page).".html";
 			break;
 			
 			case 0:
@@ -46,6 +45,10 @@ class srlBtUtility {
 				return "index.php?p=".$page. ($id!=0 ? "&id=".$id : "");
 			break;
 		}
+	}
+	
+	function getThemeLocation() {
+		return (($this->bt->conf->urlRewriting==1&&isset($_GET['id'])) ? '../' : '')."themes/designGris.css";
 	}
 	
 	function templateLocation() {
