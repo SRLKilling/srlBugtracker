@@ -45,6 +45,17 @@ if(isset($_POST['submitButton']) &&
 		if($integration) { $userDb=$_POST['integrationUserDb'];	$userTable=$_POST['integrationUserTable']; 				$userId=$_POST['integrationUserId'];	$userPseudo=$_POST['integrationUserPseudo'];	$userPassword=$_POST['integrationUserPseudo'];}
 		else { 			   $userDb=$_POST['bddName']; 			$userTable=$_POST['bddPrefix']."Users_PseudoAndPass"; 	$userId="id";							$userPseudo="pseudo";							$userPassword="password";}
 		
+		if(isset($_POST['urlRewritingType'])) {
+			switch($_POST['urlRewritingType']) {
+				case  "0": $urlRewritingType = 0; break;
+				case  "1": $urlRewritingType = 1; copy("ur1.htaccess", "../.htaccess"); break;
+				case  "2": $urlRewritingType = 2; copy("ur2.htaccess", "../.htaccess"); break;
+				default: $urlRewritingType = 2; break;
+			}
+		} else {
+			$urlRewritingType = 0;
+		}
+	
 		$dbFileContent =
 "<?php
 session_start();
@@ -55,6 +66,7 @@ class srlConfig {
 		\$this->projectName = '".$_POST['projectName']."';
 		\$this->sessId = '".$_POST['sessionId']."';
 		\$this->guestRights = ".$guestRights.";
+		\$this->urlRewriting = ".$urlRewritingType.";
 		
 		\$this->dbServer       = '".$_POST['bddServer']."';
 		\$this->dbUser         = '".$_POST['bddUser']."';

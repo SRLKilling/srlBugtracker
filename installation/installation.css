@@ -60,7 +60,7 @@ body section#mainContent fieldset label {
 	font-size: inherit;
 }
 
-body section#mainContent fieldset input[type=text], body section#mainContent fieldset input[type=password], body section#mainContent fieldset input[type=email]{
+body section#mainContent fieldset input[type=text], body section#mainContent fieldset input[type=password], body section#mainContent fieldset input[type=email], body section#mainContent fieldset select{
 	padding: 4px;
 	margin: 0px 0.5%;
     border: solid 1px #E5E5E5;  

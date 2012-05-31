@@ -47,6 +47,18 @@
 						<label for="userEmail">Adresse email (adresse publique, optionelle)&nbsp;:</label>
 						<input type="email" name="userEmail" id="userEmail" value="<?php echo postVal('userEmail')?>" placeholder="Exemple: contact@domain.tld"/>
 					</div>
+					
+					<?php if(file_get_contents("http://127.0.0.1/".substr($_SERVER['PHP_SELF'], 0, strlen($_SERVER['PHP_SELF'])-9)."/urlrewriting.txt") == "enabled") { ?>
+					<div>
+						<label for="userEmail">Type d'url rewriting&nbsp;:</label>
+						<select id="urlRewritingType" name="urlRewritingType">
+							<option value="0">Pas d'url rewriting</option>
+							<option value="1">Type : /id/page.html</option>
+							<option value="2" selected="">Type : page-id.html</option>
+						</select>
+					</div>
+					<?php } ?>
+					
 			</fieldset>
 			
 			<fieldset>

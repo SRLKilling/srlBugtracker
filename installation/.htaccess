@@ -1,0 +1,3 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^urlrewriting\.txt$   urlrewrited.txt [L]

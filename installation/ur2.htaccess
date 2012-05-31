@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^show-entry-list\.html$  index.php?p=showEntryList  [L]
+RewriteRule ^add-entry\.html$  index.php?p=addEntry  [L]
+RewriteRule ^show-entry-([0-9]+)\.html$  index.php?p=showEntry&id=$1  [L]
+RewriteRule ^edit-entry-([0-9]+)\.html$  index.php?p=editEntry&id=$1  [L]
+RewriteRule ^update-entry-([0-9]+)\.html$  index.php?p=updateEntry&id=$1  [L]
+RewriteRule ^assign-entry-([0-9]+)\.html$  index.php?p=assignEntry&id=$1  [L]
+RewriteRule ^show-user-([0-9]+)\.html$  index.php?p=showUser&id=$1  [L]
